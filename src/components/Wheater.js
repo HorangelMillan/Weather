@@ -6,7 +6,7 @@ const Wheater = () => {
 
     const [degree, setDegree] = useState(false)
 
-    const {dateWeather, conditionWeather} = useAxios();
+    const { dateWeather, conditionWeather } = useAxios();
 
     const switchDegree = () => {
         setDegree(!degree);
