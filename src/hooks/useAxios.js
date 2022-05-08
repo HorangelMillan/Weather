@@ -34,7 +34,7 @@ const useAxios = () => {
         axios(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=454353fc2285588bf1bc2559a6b75215`)
             .then(res => {
                 setDataWeather(res.data);
-                setConditionWeather(res.data?.weather[0].icon);
+                setConditionWeather(res.data?.weather[0]);
 
                 for (const property in wallpapers) {
                     if (res.data?.weather[0].id >= wallpapers[property].id[0] && res.data?.weather[0].id <= wallpapers[property].id[1]) {

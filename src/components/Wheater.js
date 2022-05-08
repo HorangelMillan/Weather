@@ -4,8 +4,7 @@ import useAxios from "../hooks/useAxios";
 
 const Wheater = () => {
 
-    const [degree, setDegree] = useState(false)
-
+    const [degree, setDegree] = useState(false);
     const { dateWeather, conditionWeather, wallpaperC } = useAxios();
 
     const switchDegree = () => {
@@ -22,10 +21,10 @@ const Wheater = () => {
                 <h2>{dateWeather.name}, {dateWeather.sys?.country}</h2>
             </header>
             <section>
-                <div><img src={conditionWeather != null ? `http://openweathermap.org/img/wn/${conditionWeather}@2x.png` : ''} alt="" className="icon" /></div>
+                <div><img src={conditionWeather?.icon != null ? `http://openweathermap.org/img/wn/${conditionWeather?.icon}@2x.png` : ''} alt="" className="icon"/></div>
                 <div className='info'>
                     <ul>
-                        <h3>Broken Clouds</h3>
+                        <h3>{conditionWeather?.description}</h3>
                         <li><i className="fa-solid fa-wind" /> <b>Wind Speed: </b>{dateWeather.wind?.speed} m/s</li>
                         <li><i className="fa-solid fa-cloud" /> <b>Clouds: </b>{dateWeather.clouds?.all}%</li>
                         <li><b>Pressure: </b>{dateWeather.main?.pressure} m.s.n.m.</li>
