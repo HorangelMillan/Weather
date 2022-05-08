@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'PressStart2P';
+    src: url('../fonts/PressStart2P-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'DotGothic16';
+    src: url('../fonts/DotGothic16-Regular.ttf');
+}
+
+.weather {
+    font-family: 'PressStart2P';
+    font-size: 15px;
+    height: 30rem;
+    width: 28rem;
+    background-color: rgba(247, 247, 247, 0.541);
+    z-index: 1;
+    border-radius: 1rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(26, 26, 26, 0.322);
+}
+
+header {
+    height: 20%;
+}
+
+header h1, header h2 {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+section img {
+    height: 100%;
+    width: 100%;
+}
+
+section {
+    display: grid;
+    grid-template-areas: 
+    'icon info',
+    'degrees test';
+    grid-template-columns: 0.6fr 1fr;
+    height: 60%;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather > div {
+    height: 20%;
+}
+
+.icon {
+    grid-area: 'icon';
+}
+
+.info {
+    grid-area: 'info';
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    font-family: 'DotGothic16';
+    font-size: 22px;
+    list-style: none;
+    /* white-space: none; */
+    margin-bottom: 0.5rem;
+}
+
+.degrees {
+    text-align: center;
+    margin-top: 1.5rem;
+    grid-area: 'degrees';
+}
+
+.weather button {
+    font-family: 'DotGothic16';
+    font-size: 15px;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1.5rem;
+    background-color: #ffffff77;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.weather button:hover {
+    background-color: #ffffff;
+}

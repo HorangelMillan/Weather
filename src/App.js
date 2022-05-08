@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import Weather from './components/Wheater.js';
+
+import snow from './images/snow.gif';
+import thunderstorm from './images/Thunderstorm.webp';
+import rain from './images/rain.gif';
+import drizzle from './images/drizzle.gif';
+import clear from './images/clear.gif';
 
 function App() {
+
+  const wallpapers = {
+    rain,
+    snow,
+    thunderstorm,
+    drizzle,
+    clear
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <img src={wallpapers.snow} alt="" />
+      <Weather />
     </div>
   );
 }
