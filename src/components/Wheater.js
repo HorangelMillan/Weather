@@ -6,7 +6,7 @@ const Wheater = () => {
 
     const [degree, setDegree] = useState(false)
 
-    const { dateWeather, conditionWeather } = useAxios();
+    const { dateWeather, conditionWeather, wallpaperC } = useAxios();
 
     const switchDegree = () => {
         setDegree(!degree);
@@ -14,6 +14,9 @@ const Wheater = () => {
 
     return (
         <div className='weather'>
+            {
+                wallpaperC != null ? <img className="wallpaper-condition" src={wallpaperC} alt="" /> : null
+            }
             <header>
                 <h1>Weather App</h1>
                 <h2>{dateWeather.name}, {dateWeather.sys?.country}</h2>

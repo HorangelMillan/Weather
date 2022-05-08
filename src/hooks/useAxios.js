@@ -1,22 +1,28 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+import rain from "../images/rain.gif";
+import snow from "../images/snow.gif";
+import thunderstorm from "../images/thunderstorm.gif";
+import drizzle from "../images/drizzle.gif";
+import clear from "../images/clear.gif";
+import clouds from "../images/clouds.webp";
+
 const useAxios = () => {
 
     const [dateWeather, setDataWeather] = useState({});
     const [conditionWeather, setConditionWeather] = useState(null);
+    const [wallpaperC, setWallpaperC] = useState(null);
 
     function success(pos) {
-        const rute = './static/media/';
 
         const wallpapers = {
-            rain: { directorie: rute + 'rain.7ee16eedafbbefa82b7f.gif', id: [500, 531] },
-            snow: { directorie: rute + 'snow.588ec48b0b78dafd78e1.gif', id: [600, 622] },
-            thunderstorm: { directorie: rute + 'thunderstorm.661e77420823d47b88ae.gif', id: [200, 232] },
-            drizzle: { directorie: rute + 'drizzle.d0ca720e5127762dc6bc.gif', id: [300, 321] },
-            clear: { directorie: rute + 'clear.85556918497f11fc0a14.gif', id: [800, 800] },
-            clouds: { directorie: rute + 'clouds.81a608adb339b51a8bbe.webp', id: [801, 804] }
-
+            rain: { image: rain, id: [500, 531] },
+            snow: { image: snow, id: [600, 622] },
+            thunderstorm: { image: thunderstorm, id: [200, 232] },
+            drizzle: { image: drizzle, id: [300, 321] },
+            clear: { image: clear, id: [800, 800] },
+            clouds: { image: clouds, id: [801, 804] }
         };
 
         var crd = pos.coords;
@@ -32,7 +38,7 @@ const useAxios = () => {
 
                 for (const property in wallpapers) {
                     if (res.data?.weather[0].id >= wallpapers[property].id[0] && res.data?.weather[0].id <= wallpapers[property].id[1]) {
-                        document.body.style.background = `url(${wallpapers[property].directorie}) no-repeat center center/100% 100% fixed`;
+                        setWallpaperC(wallpapers[property].image);
                     };
                 };
 
@@ -50,7 +56,7 @@ const useAxios = () => {
 
     }, []);
 
-    return { dateWeather, conditionWeather };
+    return { dateWeather, conditionWeather, wallpaperC };
 
 }
 

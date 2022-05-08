@@ -1,3 +1,10 @@
+.wallpaper-condition {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+}
+
 @font-face {
     font-family: 'PressStart2P';
     src: url('../fonts/PressStart2P-Regular.ttf');
@@ -14,7 +21,6 @@
     height: 30rem;
     width: 28rem;
     background-color: rgba(247, 247, 247, 0.541);
-    z-index: 1;
     border-radius: 1rem;
     padding: 1rem;
     display: flex;
