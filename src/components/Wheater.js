@@ -2,7 +2,7 @@ import "../styles/Weather.css";
 import { useState } from "react";
 import useAxios from "../hooks/useAxios";
 
-const Wheater = () => {
+const Wheater = ({weatherD}) => {
 
     const [degree, setDegree] = useState(false);
     const { dateWeather, conditionWeather, wallpaperC } = useAxios();
@@ -12,7 +12,7 @@ const Wheater = () => {
     };
 
     return (
-        <div className='weather'>
+        <div className='weather' style={{display: weatherD}}>
             {
                 wallpaperC != null ? <img className="wallpaper-condition" src={wallpaperC} alt="" /> : null
             }
