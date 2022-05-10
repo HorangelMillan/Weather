@@ -1,11 +1,25 @@
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        background-color: transparent;
+
     }
 
     to {
+        background-color: rgba(247, 247, 247, 0.541);
+    }
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
+}
+
+.fadeIn {
+    animation: fadeInImage 3s;
 }
 
 .wallpaper-condition {
@@ -38,7 +52,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(26, 26, 26, 0.322);
-    animation: fadeIn 2s;
+    animation: fadeIn 3s;
 }
 
 header {
