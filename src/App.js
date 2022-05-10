@@ -1,14 +1,14 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+/* import { useState, useEffect } from 'react'; */
 import Weather from './components/Wheater.js';
 
 function App() {
 
-  const [loader, setLoader] = useState('block');
-  const [weather, setWeather] = useState('none')
-  const [loaderAnimation, setLoaderAnimation] = useState('');
+  /* const [loader, setLoader] = useState('block'); */
+  /* const [weather, setWeather] = useState('none') */
+  /* const [loaderAnimation, setLoaderAnimation] = useState(''); */
 
-  useEffect(() => {
+  /* useEffect(() => {
     if (document.readyState === 'complete') {
       setTimeout(() => {
         setWeather('flex');
@@ -18,14 +18,14 @@ function App() {
         setLoaderAnimation('loaderAnimation');
       }, 1000)
     };
-  }, [loader, weather, loaderAnimation])
+  }, [loader, weather, loaderAnimation]) */
 
   return (
     <div className="App">
-      <div className={`Loader ${loaderAnimation}`} style={{ display: loader }}>
+      {/* <div className={`Loader ${loaderAnimation}`} style={{ display: loader }}>
         <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-      </div>
-      <Weather weatherD={weather} />
+      </div> */}
+      <Weather /* weatherD={weather} */ />
     </div>
   );
 }

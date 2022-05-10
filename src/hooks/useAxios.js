@@ -10,7 +10,7 @@ import clouds from "../images/clouds.webp";
 
 const useAxios = () => {
 
-    const [dateWeather, setDataWeather] = useState({});
+    const [dateWeather, setDataWeather] = useState(null);
     const [conditionWeather, setConditionWeather] = useState(null);
     const [wallpaperC, setWallpaperC] = useState(null);
 
@@ -33,7 +33,9 @@ const useAxios = () => {
         console.log('More or less ' + crd.accuracy + ' meters.');
         axios(`https://api.openweathermap.org/data/2.5/weather?lat=${crd.latitude}&lon=${crd.longitude}&appid=454353fc2285588bf1bc2559a6b75215`)
             .then(res => {
-                setDataWeather(res.data);
+                setTimeout(() => {
+                    setDataWeather(res.data);
+                }, 2000);
                 setConditionWeather(res.data?.weather[0]);
 
                 for (const property in wallpapers) {

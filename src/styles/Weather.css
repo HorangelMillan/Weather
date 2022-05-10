@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 .wallpaper-condition {
     position: absolute;
     height: 100vh;
@@ -16,11 +26,11 @@
 }
 
 .weather {
+    background-color: rgba(247, 247, 247, 0.541);
     font-family: 'PressStart2P';
     font-size: 15px;
     height: 30rem;
     width: 28rem;
-    background-color: rgba(247, 247, 247, 0.541);
     border-radius: 1rem;
     padding: 1rem;
     display: flex;
@@ -28,13 +38,15 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px rgba(26, 26, 26, 0.322);
+    animation: fadeIn 2s;
 }
 
 header {
     height: 20%;
 }
 
-header h1, header h2 {
+header h1,
+header h2 {
     text-align: center;
     margin: 1rem 0;
 }
@@ -46,16 +58,16 @@ section img {
 
 section {
     display: grid;
-    grid-template-areas: 
-    'icon info',
-    'degrees test';
+    grid-template-areas:
+        'icon info',
+        'degrees test';
     grid-template-columns: 0.6fr 1fr;
     height: 60%;
     justify-content: center;
     align-items: center;
 }
 
-.weather > div {
+.weather>div {
     height: 20%;
 }
 
